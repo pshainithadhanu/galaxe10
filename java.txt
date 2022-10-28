@@ -1,0 +1,30 @@
+React Life Cycle Methods
+-->Mounting, Updating, and Unmounting.
+-->Mounting:
+	1.constructor()
+	2.getDerivedStateFromProps()
+	3.render()
+	4.componentDidMount()
+-->1.constructor(): The constructor() method is called before anything else, when the component is initiated, 
+and it is the natural place to set up the initial state and other initial values.The constructor method is called, by React, every 
+time you make a component.
+-->2.getDerivedStateFromProps():The getDerivedStateFromProps() method is called right before rendering the element(s) in the DOM.
+This is the natural place to set the state object based on the initial props.It takes state as an argument, and returns an object with changes to the state.
+-->3.render():The render() method is required, and is the method that actually outputs the HTML to the DOM.
+-->4.componentDidMount():The componentDidMount() method is called after the component is rendered.his is where you run statements that requires that the component is already placed in the DOM.
+
+--->Updating:
+    1.getDerivedStateFromProps()
+    2.shouldComponentUpdate()
+    3.render()
+    4.getSnapshotBeforeUpdate()
+    5.componentDidUpdate()
+--> 1.getDerivedStateFromProps(): Also at updates the getDerivedStateFromProps method is called. This is the first method that is called when a component gets updated.
+--> 2.shouldComponentUpdate():In the shouldComponentUpdate() method you can return a Boolean value that specifies whether React should continue with the rendering or not.
+--> 3.render():The render() method is of course called when a component gets updated, it has to re-render the HTML to the DOM, with the new changes.
+--> 4.getSnapshotBeforeUpdate():In the getSnapshotBeforeUpdate() method you have access to the props and state before the update, meaning that even after the update, you can check what the values were before the update.
+	If the getSnapshotBeforeUpdate() method is present, you should also include the componentDidUpdate() method, otherwise you will get an error.
+--> 5.componentDidUpdate():The componentDidUpdate method is called after the component is updated in the DOM.
+
+-->Unmounting:
+	1.componentWillUnmount()
